@@ -2,6 +2,7 @@ import argparse
 import google
 import os
 import time
+import pygame 
 
 """Google Cloud Text-To-Speech API sample application .
 Example usage:
@@ -106,9 +107,14 @@ if __name__ == "__main__":
     else:
         synthesize_ssml(args.ssml)
 
+pygame.init()
+pygame.mixer.init()
+pygame.mixer.music.load("output.mp3")
+pygame.mixer.music.play()
+while pygame.mixer.music.get_busy() == True:
+    continue
 
-
-time.sleep(30)
+#time.sleep(30)
 if os.path.exists("output.mp3"):
     os.remove("output.mp3")
 else:
