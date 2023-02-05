@@ -1,5 +1,5 @@
 # NATE - Intelligent Companion
-Need some vibes? We got you covered. Submission for CruzHacks 2023.
+Submission for CruzHacks 2023.
 
 ## Inspiration
 As CS students who also love hardware, we wanted to find a way to combine the two. 
@@ -15,9 +15,11 @@ It took us over 3 hours to get the Google Text-to-Speech API to work, mainly bec
 
 ## Accomplishments that we're proud of
 - **Monica**: I'm proud of being able to navigate documentation to get text-to-speech to work, since it was my first time working with software like this.
+- **Robin**: I learned how to use the Google Cloud console.
+- **Frank**: This.
 
 ## What we learned
-
+A lot about Google Cloud and OpenAI.
 
 ## What's next for NATE
-The possibilities are endless, but a great place to start would be to include a bigger selection of playlists.
+We can eventually incorporate more features and a cleaner UI.
