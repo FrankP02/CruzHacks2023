@@ -3,6 +3,7 @@
 import os
 import openai
 from dotenv import load_dotenv
+import tts
 
 # load .env file for environment variables
 load_dotenv()
@@ -23,5 +24,9 @@ response = openai.Completion.create(
   stop=["\n\n"]
 )
 
+# cleaning up answer and sending it to TTS
+answer = response["choices"][0]["text"].strip("\nA: ")
+tts.synthesize_text(answer)
+
 # response is cleaned up and printed out
-print(response["choices"][0]["text"].strip("\nA: "))
+print(answer)
