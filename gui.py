@@ -9,10 +9,15 @@ from PySide6.QtWidgets import (QApplication, QWidget, QLabel, QPushButton, QLine
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
+        self.setWindowTitle("NATE - Intelligent Companion")
+        self.setFixedWidth(300)
+        self.setFixedHeight(250)
+
         self.txtBox = QLineEdit(self)
         self.subButton = QPushButton('SUBMIT')
         self.title = QLabel('What can NATE help you with?')
         self.ans = QLabel('')
+        self.ans.setWordWrap(True)
         vbox = QVBoxLayout()
         vbox.addWidget(self.title)
         vbox.addWidget(self.txtBox)
@@ -28,6 +33,7 @@ class MainWindow(QWidget):
             answer = test.get_openai_response(userQuestion)  # creates answer from OpenAI API
             synth.synthesize_text(answer)  # creates .mp3 with answer from previous
             self.ans.setText(answer)  # updates label
+            synth.playAnswer()  # plays .mp3
 
 
 # runs the program

@@ -1,7 +1,6 @@
 import argparse
 import google
-import os
-import time
+import os, time, pygame
 
 """Google Cloud Text-To-Speech API sample application .
 Example usage:
@@ -45,6 +44,14 @@ def synthesize_text(text):
         print('Audio content written to file "output.mp3"')
     
 # [END tts_synthesize_text]
+
+def playAnswer():
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load("output.mp3")
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy() == True:
+        continue
 
 
 time.sleep(30)
