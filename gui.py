@@ -2,11 +2,8 @@
 User interface for desktop
 '''
 import sys
-from PySide6.QtWidgets import (QApplication, QWidget, QLabel, QPushButton, QTextEdit, QLineEdit, 
-                                QHBoxLayout, QVBoxLayout, QDialog, QTextBrowser, QComboBox)
-from PySide6.QtGui import QPixmap
-from PySide6.QtCore import Qt
-from PySide6.QtCore import Slot
+import test
+from PySide6.QtWidgets import (QApplication, QWidget, QLabel, QPushButton, QLineEdit, QVBoxLayout)
 
 
 class MainWindow(QWidget):
@@ -26,10 +23,10 @@ class MainWindow(QWidget):
         self.subButton.clicked.connect(self.on_click)
 
     def on_click(self):
-        self.ans.setText('woah ur so cool')
-
-
-
+        userQuestion = self.txtBox.text()
+        if userQuestion:
+            answer = test.get_openai_response(userQuestion)
+            self.ans.setText(answer)
 
 
 # runs the program
