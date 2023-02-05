@@ -2,7 +2,7 @@
 User interface for desktop
 '''
 import sys
-import test
+import test, synth
 from PySide6.QtWidgets import (QApplication, QWidget, QLabel, QPushButton, QLineEdit, QVBoxLayout)
 
 
@@ -25,8 +25,9 @@ class MainWindow(QWidget):
     def on_click(self):
         userQuestion = self.txtBox.text()
         if userQuestion:
-            answer = test.get_openai_response(userQuestion)
-            self.ans.setText(answer)
+            answer = test.get_openai_response(userQuestion)  # creates answer from OpenAI API
+            synth.synthesize_text(answer)  # creates .mp3 with answer from previous
+            self.ans.setText(answer)  # updates label
 
 
 # runs the program
