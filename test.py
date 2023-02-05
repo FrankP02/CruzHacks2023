@@ -1,4 +1,4 @@
-# starter code by OpenAI tutorial
+# starter code by OpenAI tutorial (https://platform.openai.com/docs/guides/completion)
 
 import os
 import openai
